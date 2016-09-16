@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   resources :topics do
+    collection do
+      get 'about'
+    end
     member do
       post 'upvote'
       post 'downvote'
-      get 'about'
     end
   end
   root 'topics#index'
